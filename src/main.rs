@@ -1,16 +1,18 @@
+use anyhow::Result;
 use axum::extract::RawQuery;
 use axum::http::StatusCode;
 use axum::{routing::get, Router};
 
 #[tokio::main]
-async fn main() {
+async fn main() -> Result<()> {
     let app_routes = Router::new()
         .route("/plus", get(plus))
         .route("/minus", get(minus));
     let app = Router::new().nest("/api/v1", app_routes);
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
-    axum::serve(listener, app).await.unwrap();
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await?;
+    axum::serve(listener, app).await?;
+    Ok(())
 }
 
 async fn plus(RawQuery(query): RawQuery) -> Result<String, StatusCode> {
