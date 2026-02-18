@@ -2,6 +2,11 @@
 name = "CalculatorAPI"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+authors = ["ADAMADA8"]
+description = "Simple API for performing basic mathematical operations."
+repository = "https://github.com/ADAMADA8/CalculatorAPI"
+publish = false
 
 [dependencies]
 axum = { version = "0.8" }
