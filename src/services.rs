@@ -1,6 +1,6 @@
+use crate::handlers::{minus, plus};
 use axum::Router;
 use axum::routing::get;
-use crate::handlers::{plus, minus};
 
 pub(crate) fn app_router() -> Router {
     let app_routes = Router::new()
