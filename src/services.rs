@@ -1,6 +1,6 @@
-use crate::handlers::{subtract, add, multiply, divide};
-use axum::Router;
+use crate::handlers::{add, divide, multiply, subtract};
 use axum::routing::get;
+use axum::Router;
 
 pub(crate) fn app_router() -> Router {
     let app_routes = Router::new()
