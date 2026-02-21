@@ -52,7 +52,7 @@ jobs:
       - name: Publish artifacts and release
         uses: houseabsolute/actions-rust-release@v0
         with:
-          executable-name: ubi
+          executable-name: CalculatorAPI
           target: ${{ matrix.platform.target }}
           changes-file: ""
           action-gh-release-parameters: '{"generate_release_notes": true}'
